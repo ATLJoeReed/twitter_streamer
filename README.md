@@ -4,6 +4,8 @@ This program taps into the Twitter Streaming API and allows you to define keywor
 
 To use this program you need to install the requirements and setup a Twitter Developer Account along with a Twitter application. This will get you the four items (see below) you need to access the Twitter Streaming API.
 
+NOTE: The main requirements are tweepy, sqlalchemy & psycopg2.
+
 Final setup is to have a file /config/settings.py with the following items.
 
 DB_URL = 'postgres://xxxxxxxx'
