@@ -24,6 +24,6 @@ api = tweepy.API(auth)
 stream_listener = StreamListener()
 stream = tweepy.Stream(auth=api.auth, listener=stream_listener)
 
-stream.filter(track=['python'], async=True)
+stream.filter(track=['#CensusChat'], async=True)
 # stream.filter(locations=[-125,25,-65,48], async=True)
 # stream.filter(locations=[-122.75,36.8,-121.75,37.8], async=True)
