@@ -1,1 +1,1 @@
-TRACK_TERMS = ['Trump']
+TRACK_TERMS = ['HeartBeat', 'Parenthood', 'Pro-Life', 'ProLife']
