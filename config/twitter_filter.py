@@ -1,1 +1,1 @@
-TRACK_TERMS = ['HeartBeat', 'Parenthood', 'Pro-Life', 'ProLife']
+TRACK_TERMS = ['KamalaHarris']
