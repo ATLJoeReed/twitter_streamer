@@ -10,7 +10,7 @@ metadata = MetaData(schema='raw')
 
 engine = create_engine(settings.DB_URL)
 
-tweets = Table('kamala_harris_tweets', metadata, autoload=True, autoload_with=engine) # noqa
+tweets = Table('dem_debate_20190626', metadata, autoload=True, autoload_with=engine) # noqa
 
 connection = engine.connect()
 

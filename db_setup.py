@@ -1,6 +1,6 @@
 from sqlalchemy import (
     create_engine, MetaData, Table, Column,
-    Integer, Text, DateTime, Boolean
+    Integer, Text, DateTime, Boolean, Numeric
 )
 
 from config import settings
@@ -11,7 +11,7 @@ engine = create_engine(settings.DB_URL)
 metadata = MetaData(schema='raw')
 
 tweets = Table(
-    'kamala_harris_tweets', metadata,
+    'dem_debate_20190626', metadata,
     Column('ukey', Integer(), primary_key=True),
     Column('ymd', DateTime(timezone=True)),
     Column('name', Text(), nullable=True),
@@ -23,7 +23,9 @@ tweets = Table(
     Column('tweet', Text(), nullable=False),
     Column('retweeted', Boolean(), default=False),
     Column('original_tweet', Text(), nullable=True),
-
+    Column('clean_tweet', Text(), nullable=True),
+    Column('polarity', Numeric(5, 3), nullable=True),
+    Column('subjectivity', Numeric(5, 3), nullable=True)
 )
 
 metadata.create_all(engine)
