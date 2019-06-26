@@ -1,5 +1,6 @@
 NBC_DEBATE_HASH_TAGS = [
     '#DemDebate',
+    '#DemocraticDebate',
     '@NBCNews'
 ]
 

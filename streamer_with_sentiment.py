@@ -10,7 +10,7 @@ from config import settings, twitter_filters
 
 metadata = MetaData(schema='raw')
 engine = create_engine(settings.DB_URL)
-tweets = Table('pre_debate_20190625', metadata, autoload=True, autoload_with=engine) # noqa
+tweets = Table('dem_debate_20190626', metadata, autoload=True, autoload_with=engine) # noqa
 connection = engine.connect()
 
 analyzer = SentimentIntensityAnalyzer()
@@ -87,6 +87,6 @@ stream = tweepy.Stream(
 
 filters = twitter_filters.NBC_DEBATE_HASH_TAGS
 filters.extend(twitter_filters.NBC_DEBATE_CANDIDATES_20190626)
-filters.extend(twitter_filters.NBC_DEBATE_CANDIDATES_20190627)
+# filters.extend(twitter_filters.NBC_DEBATE_CANDIDATES_20190627)
 
 stream.filter(languages=["en"], track=filters)
