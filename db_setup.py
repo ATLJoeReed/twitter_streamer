@@ -11,11 +11,13 @@ engine = create_engine(settings.DB_URL)
 metadata = MetaData(schema='raw')
 
 tweets = Table(
-    'dem_debate_20190626', metadata,
+    'pre_debate_20190625', metadata,
     Column('ukey', Integer(), primary_key=True),
-    Column('ymd', DateTime(timezone=True)),
+    Column('created_at_utc', DateTime(timezone=False)),
+    Column('id_str', Text(), nullable=True),
     Column('name', Text(), nullable=True),
     Column('screen_name', Text(), nullable=True),
+    Column('source', Text(), nullable=True),
     Column('followers_count', Integer(), nullable=True),
     Column('location', Text(), nullable=True),
     Column('description', Text(), nullable=True),
@@ -23,9 +25,10 @@ tweets = Table(
     Column('tweet', Text(), nullable=False),
     Column('retweeted', Boolean(), default=False),
     Column('original_tweet', Text(), nullable=True),
-    Column('clean_tweet', Text(), nullable=True),
-    Column('polarity', Numeric(5, 3), nullable=True),
-    Column('subjectivity', Numeric(5, 3), nullable=True)
+    Column('neg', Numeric(5, 3), nullable=True),
+    Column('neu', Numeric(5, 3), nullable=True),
+    Column('pos', Numeric(5, 3), nullable=True),
+    Column('compound', Numeric(5, 3), nullable=True),
 )
 
 metadata.create_all(engine)

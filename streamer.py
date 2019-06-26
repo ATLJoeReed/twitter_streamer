@@ -7,11 +7,8 @@ from config import settings, twitter_filter
 
 
 metadata = MetaData(schema='raw')
-
 engine = create_engine(settings.DB_URL)
-
 tweets = Table('dem_debate_20190626', metadata, autoload=True, autoload_with=engine) # noqa
-
 connection = engine.connect()
 
 
